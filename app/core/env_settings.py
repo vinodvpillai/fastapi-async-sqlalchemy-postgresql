@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     
     PROJECT_NAME: str
     
+    DATABASE_URL: str
+    
     FILE_LOG_INFO_LEVEL: int
     CONSOLE_LOG_INFO_LEVEL: int
     

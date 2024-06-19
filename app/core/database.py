@@ -62,3 +62,6 @@ async def get_db_session():
 async def get_db_connection():
     async with sessionmanager.connect() as connection:
         yield connection
+        
+# Ensure models are imported here
+from app.model.article import Article

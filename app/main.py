@@ -6,7 +6,8 @@ from app.core.log_middleware import LoggingMiddleware
 from app.core.env_settings import settings
 from app.core.database import sessionmanager, Base
 from contextlib import asynccontextmanager
-from app.core.initialize_db import init_db
+# Not required now integrated - Alembic for managing database migrations
+#from app.core.initialize_db import init_db
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -15,7 +16,8 @@ async def lifespan(app: FastAPI):
     To understand more, read https://fastapi.tiangolo.com/advanced/events/
     """
     # Database initialization - Create necessary tables
-    await init_db()
+    # await init_db() 
+    # Above line not required now integrated - Alembic for managing database migrations
     yield
     if sessionmanager._engine is not None:
         # Close the DB connection
