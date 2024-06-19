@@ -10,6 +10,7 @@ The Async Article Microservice is a RESTful API built using FastAPI, designed fo
 - Fully asynchronous operations.
 - JWT authentication to secure endpoints.
 - Integration with an Authentication Service for user authentication and authorization.
+- Alembic for database migrations
 
 ## Technologies Used
 
@@ -59,13 +60,16 @@ SECRET_KEY=your_secret_key
 
 Replace `username`, `password`, `localhost`, and `dbname` with your PostgreSQL credentials and database name.
 
-### 5. Initialize the Database
+### 5. Database Setup
 
-Run the initialization script to create the necessary tables in the database:
+Ensure your PostgreSQL server is running and create the necessary database.
+
+Run Database Migrations
 
 ```sh
-python -m app.core.initialize_db
+alembic upgrade head
 ```
+Now you have a database with all the migrations applied.
 
 ### 6. Run the Application
 
