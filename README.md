@@ -1,4 +1,4 @@
-# Async Article Microservice (OAuth2)
+# Async Article Microservice
 
 ## Overview
 
